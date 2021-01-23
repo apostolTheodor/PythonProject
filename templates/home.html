@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>HOME</title>
+    <link rel="icon" type="image/png" href="https://www.favicon.cc/logo3d/822979.png"/>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+    <style>
+    body {background-color: powderblue; }
+    h1   {color: green;}
+    p    {color: blue;}
+    .home_h{
+      color: green;
+      background-color: rgb(240, 138, 22);
+    }
+
+</style>
+  </head>
+  <body>
+
+    {% extends "template.html" %}
+    {% block content %}
+
+        <h1 class = "home_h"> What is in store? </h1>
+        {% for item in data %}
+           <ul>
+        <img src = "category{{item[0]}}.jpg"
+            alt = "Learn HTML5" height = "50" width = "50" />
+               <li> {{item[1]}}</li>
+           </ul>
+
+        {% endfor %}
+    {% endblock %}
+  </body>
+</html>

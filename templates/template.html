@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Flask Parent Template</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <style>
+    body {background-color: rgb(227, 255, 255);}
+    h1.store   {
+      color: blue;
+      background-color: rgb(130, 46, 240);
+      align: ceter;
+    }
+    .header {
+        padding: 60px;
+        text-align: center;
+        background: #1abc9c;
+        color: white;
+        font-size: 30px;
+    }
+    p    {color: red;}
+</style>
+  </head>
+  <body>
+    <header>
+      <div>
+
+       <h1 class="header" ><a href="{{ url_for('home') }}">STORE</h1>
+
+        <strong><nav>
+          <ul class="nav nav-tabs nav-justified">
+            <li><a href="{{ url_for('home') }}">Home</a></li>
+            <li><a href="{{ url_for('all') }}">All Items</a></li>
+          </ul>
+        </nav></strong>
+      </div>
+    </header>
+
+{% block content %}
+{% endblock %}
+
+ </body>
+</html>

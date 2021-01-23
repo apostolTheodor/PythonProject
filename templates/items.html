@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Flask Tutorial</title>
+    <style>
+    body {background-color: powderblue; }
+    h1   {color: green;}
+    p    {color: blue;}
+    .home_h{
+      color: green;
+      background-color: rgb(240, 138, 22);
+    }
+</style>
+  </head>
+  <body>
+    {% extends "template.html" %}
+    {% block content %}
+    <h1>Information</h1>
+
+        <li>
+            <b>Item ID:</b> {{ item[0] }}<br>
+            <b>Name/Model:</b> {{ item[3] }}<br>
+            <b>Producer:</b> {{ item[2] }}<br>
+            <b>Price:</b> {{ item[4] }}$
+        </li>
+
+    {% endblock %}
+  </body>
+</html>

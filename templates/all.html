@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>HOME</title>
+    <link rel="icon" type="image/png" href="https://www.favicon.cc/logo3d/822979.png"/>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <style>
+    body {background-color: powderblue; }
+    h1   {color: green;}
+    p    {color: blue;}
+    .home_h{
+      color: green;
+      background-color: rgb(240, 138, 22);
+    }
+    .button {
+      border: none;
+      color: white;
+      padding: 15px 32px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin: 4px 2px;
+      cursor: pointer;
+    }
+    .button1 {background-color: #4CAF50;} /* Green */
+    .button2 {background-color: #008CBA;} /* Blue */
+
+</style>
+  </head>
+  <body>
+    {% extends "template.html" %}
+    {% block content %}
+
+        <h1 class = "home_h"> What is in store? </h1>
+        {% for item in data %}
+
+            <ul>
+                <li>  <b>Name:</b> {{ item[3] }}</li>
+
+                <ul>
+                    <li><b>Producer:</b> {{ producers[item[2]-1] }}<br></li>
+                    <li><b>Price:</b> {{ item[4] }}$<br></li>
+                </ul>
+                 <button class = "button1" onclick="location.href='{{ url_for("items", item_id=item[0]) }}'" type="button">Show Item</button>
+            </ul>
+        {% endfor %}
+    {% endblock %}
+  </body>
+</html>
